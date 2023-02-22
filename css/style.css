@@ -25,11 +25,7 @@ body {
   );
 }
 .btn {
-  background-image: linear-gradient(
-    to left,
-    rgba(159, 21, 21, 0.7),
-    rgb(0, 0, 0, 0.6)
-  );
+  background-image: var(--gradient);
   border-radius: 50px;
   padding-left: 20px;
   padding-right: 20px;
@@ -51,6 +47,12 @@ body {
 .btn.btn-black {
   background-color: rgba(4, 4, 12, 0.9);
 }
+#project,
+#nfts,
+#company,
+footer {
+  margin-top: 140px;
+}
 /* *********************************** */
 /************ TYPOGRAPHY ************* */
 :root {
@@ -61,6 +63,13 @@ body {
   --white: (255, 255, 255);
   --darkblue: (0, 0, 48);
   --shadow: 0 10px 13px rgba(0, 0, 0, 0.3);
+  --gradient: linear-gradient(
+    to top left,
+    rgba(33, 21, 159, 0.9),
+    rgba(244, 15, 15, 0.253),
+    rgba(0, 0, 0, 0.2),
+    rgba(30, 13, 223, 0.9)
+  );
 }
 /* ***************************** */
 /* **********Header************* */
@@ -91,6 +100,12 @@ li {
 }
 header #ttl {
   padding: 120px 0;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+header nav {
+  margin-left: 100px;
+  margin-right: 100px;
 }
 header nav ul li {
   text-decoration: none;
@@ -127,43 +142,83 @@ header nav li a:hover {
 }
 /* ***************************** */
 /* ******** #carousel ********** */
+#carousel {
+  margin-top: 20px;
+}
 #carousel img {
-    height: 80vh;
-    background-position: center;
-    background-size: cover;
+  height: 70vh;
+  background-position: center;
+  background-size: cover;
 }
 /* ***************************** */
 /* ********** #project ************* */
 #project img {
-  max-height: 200px;
+  max-height: 400px;
+  max-width: 50%;
+}
+#project article h2 {
+  padding: 30px;
+}
+/* ***************************** */
+/* ********** #nfts *********** */
+#nfts img {
+  max-width: 50%;
+}
+#nfts article h2 {
+  padding-bottom: 30px;
+}
+#nfts article a {
+  margin: 30px 0;
 }
 /* ***************************** */
 /* ********** #company ************* */
-#company div ul {
-  gap: 35px;
+#company article h2 {
+  padding: 30px 0;
 }
-#company div ul img {
-  max-height: 200px;
+#company img {
+  max-height: 250px;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 }
-#company div ul li:first-child {
+#company article {
+  max-width: auto;
+}
+#company div ul li:first-child img {
   transform: skew(-10deg);
-  color: inherit;
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 }
 #company div ul li:last-of-type {
+  clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
   transform: skew(10deg);
 }
 /* ***************************** */
 /* ********** #footer ************* */
 #footer {
   background-color: var(--background);
+  text-align: center;
+}
+#footer form input {
+  border: 0;
+  margin: 20px 0;
+  border-radius: 5px;
 }
 #footer a img {
-  height: 40px;
+  height: 70px;
+  margin: 50px;
+} 
+#footer aside ul a i {
+padding: 15px;
 }
-#footer a img:hover {
+#footer ul:last-of-type li a {
+  padding: 2px;
+  border-radius: 5px;
+  background-image: var(--gradient);
+}
+#footer ul:last-of-type li a:hover {
   transition: transform 0.3s ease;
   transform: translateY(-5px);
-  box-shadow: var(--shadow);
+}
+footer p {
+  font-size: small;
 }
 /* **********DASHBOARD.HTML******** */
 /* ********** #mynfts ************* */
@@ -176,12 +231,12 @@ header nav li a:hover {
 /* ******************************** */
 /* ********* DETAILS.HTML ********* */
 #own-nft ul li img {
-    max-height: 60px;
-    width: 80px;
+  max-height: 60px;
+  width: 80px;
 }
 #own-nft article img {
-    max-width: 600px;
-    max-height: 400px;
+  max-width: 600px;
+  max-height: 400px;
 }
 
 /* ******************************** */
@@ -197,6 +252,13 @@ header nav li a:hover {
   header nav {
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  header #ttl {
+    padding: 120px 0;
+    margin-left: 0;
+    margin-right: 0;
   }
   header nav ul {
     width: 100%;
@@ -206,7 +268,7 @@ header nav li a:hover {
     padding: 0;
     width: 100%;
     text-align: center;
-    background-color: rgba(69, 27, 56, 0.287);
+    background-color: rgba(9, 9, 46, 0.5);
   }
   header nav ul li a {
     padding: 5px;
@@ -215,10 +277,19 @@ header nav li a:hover {
   }
   header nav li a:hover {
     background-color: rgb(9, 9, 46);
+    width: 100%;
     padding: 5px;
     border-radius: 0;
   }
   #own-nft ul li img {
     max-height: 200px;
+  }
+  #carousel,
+  #project,
+  #nfts,
+  #company,
+  footer {
+    max-height: 100vh;
+    margin-top: 100px;
   }
 }
