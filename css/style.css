@@ -1,6 +1,6 @@
 /* ******************************** */
 /* *********** GENERAL CSS********* */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,900;1,400&family=Work+Sans:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;700&display=swap');
 html {
   scroll-behavior: smooth ease 3s;
 }
@@ -66,8 +66,8 @@ footer {
   --gradient: linear-gradient(
     to top left,
     rgba(33, 21, 159, 0.9),
-    rgba(244, 15, 15, 0.253),
-    rgba(0, 0, 0, 0.2),
+    rgba(199, 11, 23, 0.505),
+    rgba(8, 101, 17, 0.2),
     rgba(30, 13, 223, 0.9)
   );
 }
@@ -119,8 +119,8 @@ header nav img:hover {
 }
 .toggle {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 31px;
+  right: 15px;
   flex-direction: column;
   display: none;
   justify-content: space-between;
@@ -204,9 +204,9 @@ header nav li a:hover {
 #footer a img {
   height: 70px;
   margin: 50px;
-} 
+}
 #footer aside ul a i {
-padding: 15px;
+  padding: 15px;
 }
 #footer ul:last-of-type li a {
   padding: 2px;
@@ -226,8 +226,15 @@ footer p {
   max-height: 200px;
 }
 #mynfts aside {
-  background-color: rgb(4, 4, 30);
+  background-color: rgb(46, 46, 66);
 }
+#mynfts aside h3 {
+  margin-top: -10px;
+}
+.nft-aside {
+  display: block;
+}
+
 /* ******************************** */
 /* ********* DETAILS.HTML ********* */
 #own-nft ul li img {
@@ -249,9 +256,12 @@ footer p {
   .toggle {
     display: flex;
   }
+  header nav img {
+    margin-left: -400px;
+  }
   header nav {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; 
     margin-left: 0;
     margin-right: 0;
   }
@@ -261,12 +271,12 @@ footer p {
     margin-right: 0;
   }
   header nav ul {
-    width: 100%;
     flex-direction: column;
+    width: 100%;
   }
   header nav ul li {
-    padding: 0;
     width: 100%;
+    padding: 0;
     text-align: center;
     background-color: rgba(9, 9, 46, 0.5);
   }
